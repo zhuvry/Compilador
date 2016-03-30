@@ -27,9 +27,9 @@ namespace Compilador.Cache
         }
         public Linea getLinea(int n)
         {
-            if (n < listaLineas.Count)
+            if (n < listaLineas.Count+1)
             {
-                return listaLineas[n];
+                return listaLineas[n-1];
             }
             return null;
         }

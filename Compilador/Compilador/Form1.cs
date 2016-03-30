@@ -1,4 +1,5 @@
-﻿using Compilador.Cache;
+﻿using Compilador.Analisis_Lexico;
+using Compilador.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Compilador
     public partial class Form1 : Form
     {
         private ProgramaFuente programaFuente = ProgramaFuente.obtenerInstancia();
+        private AnalizadorLexico analizadorLexico = new AnalizadorLexico();
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Compilador
             {
                 return;
             }
-            for(int i = 0; i < programaFuente.getLineas().Count; i++)
+            for(int i = 1; i <= programaFuente.getLineas().Count; i++)
             {
                 Linea lineaActual = programaFuente.getLinea(i);
                 textBoxPrevisualizacion.AppendText(i + ".");
@@ -138,6 +140,13 @@ namespace Compilador
             label4.Visible = false;
             textBoxConsole.Visible = false;
             button3.Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ComponenteLexico comp = analizadorLexico.analizar();
+            MessageBox.Show(comp.lexema);
+            
         }
     }
 }

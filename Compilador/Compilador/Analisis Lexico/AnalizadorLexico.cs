@@ -24,8 +24,9 @@ namespace Compilador.Analisis_Lexico
             numLineaActual += 1;
             if (ProgramaFuente.obtenerInstancia().getLineas().Count >= numLineaActual)
             {
+                ProgramaFuente inst = ProgramaFuente.obtenerInstancia();
 
-                contenidoLineaActual = ProgramaFuente.obtenerInstancia().getLinea(numLineaActual).getContenido();
+                contenidoLineaActual =inst.getLinea(numLineaActual).getContenido();
             }
             else {
                 contenidoLineaActual = "@EOF@";
@@ -211,6 +212,7 @@ namespace Compilador.Analisis_Lexico
                         }
                         break;
                     case 4:
+                        leerSiguienteCaracter();
                         if (Char.IsDigit(caracterActual.ToCharArray()[0]))
                         {
                             lexema += caracterActual;
@@ -447,6 +449,7 @@ namespace Compilador.Analisis_Lexico
                         continuarAnalisis = false;
                         break;
                     case 25:
+                        devolverPuntero();
                         componente = new ComponenteLexico();
                         componente.lexema = lexema;
                         componente.categoria = "MENOR QUE";
@@ -469,6 +472,7 @@ namespace Compilador.Analisis_Lexico
                         continuarAnalisis = false;
                         break;
                     case 27:
+                        devolverPuntero();
                         componente = new ComponenteLexico();
                         componente.lexema = lexema;
                         componente.categoria = "MAYOR QUE";
@@ -482,12 +486,15 @@ namespace Compilador.Analisis_Lexico
                     case 28:
                         componente = new ComponenteLexico();
                         componente.lexema = lexema;
-                        componente.categoria = "ASIGNACIO";
+                        componente.categoria = "ASIGNACION";
                         componente.numLinea = numLineaActual;
                         componente.posicionInicial = puntero - lexema.Length;
 
 
                         ////Pendiente colocar en la tabla de símbolos
+                        continuarAnalisis = false;
+                        break;
+                    case 29:
                         continuarAnalisis = false;
                         break;
                     case 30:
