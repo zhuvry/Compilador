@@ -1,4 +1,4 @@
-﻿using Compilador.Análisis_Léxico;
+﻿using Compilador.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

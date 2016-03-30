@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Compilador.Análisis_Léxico
+namespace Compilador.Cache
 {
     class Linea
     {
