@@ -1,0 +1,8 @@
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\bin\Release\Compilador.exe.config
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\bin\Release\Compilador.exe
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\bin\Release\Compilador.pdb
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\obj\Release\Compilador.Form1.resources
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\obj\Release\Compilador.Properties.Resources.resources
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\obj\Release\Compilador.csproj.GenerateResource.Cache
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\obj\Release\Compilador.exe
+C:\Users\rocka\OneDrive\Documentos\GitHub\Compilador\Compilador\Compilador\obj\Release\Compilador.pdb

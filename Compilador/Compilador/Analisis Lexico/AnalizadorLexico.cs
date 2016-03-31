@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Compilador.Tabla_de_simbolos;
 
 namespace Compilador.Analisis_Lexico
 {
@@ -166,7 +167,6 @@ namespace Compilador.Analisis_Lexico
                         }
                         else if (caracterActual.Equals("@FL@"))
                         {
-                            lexema += caracterActual;
                             estadoActual = 13;
                         }
                         else {
@@ -233,6 +233,7 @@ namespace Compilador.Analisis_Lexico
                         componente.categoria = "SUMA";
                         componente.numLinea = numLineaActual;
                         componente.posicionInicial = puntero - lexema.Length;
+
 
 
                         ////Pendiente colocar en la tabla de símbolos
@@ -372,10 +373,19 @@ namespace Compilador.Analisis_Lexico
                         continuarAnalisis = false;
                         break;
                     case 17:
+                        string numeroDEcimalDummie = "999.99";
+                        devolverPuntero();
+                        componente = new ComponenteLexico();
+                        componente.lexema = lexema;
+                        componente.categoria = numeroDEcimalDummie;
+                        componente.numLinea = numLineaActual;
+                        componente.posicionInicial = puntero - lexema.Length;
+                        componente.posicionFinal = puntero - 1;
                         continuarAnalisis = false;
                         break;
                     case 18:
                         continuarAnalisis = false;
+                        throw new Exception("ERROR FATAL");
                         break;
                     case 19:
                         componente = new ComponenteLexico();
@@ -405,6 +415,7 @@ namespace Compilador.Analisis_Lexico
                         }
                         break;
                     case 21:
+                        leerSiguienteCaracter();
                         if (caracterActual.Equals("="))
                         {
                             lexema += caracterActual;
@@ -416,6 +427,7 @@ namespace Compilador.Analisis_Lexico
                         }
                         break;
                     case 22:
+                        leerSiguienteCaracter();
                         if (caracterActual.Equals("="))
                         {
                             lexema += caracterActual;
@@ -495,6 +507,13 @@ namespace Compilador.Analisis_Lexico
                         continuarAnalisis = false;
                         break;
                     case 29:
+                        devolverPuntero();
+                        string asignacionDummie = ":=";
+                        componente = new ComponenteLexico();
+                        componente.lexema = asignacionDummie;
+                        componente.categoria = "ASIGNACION";
+                        componente.numLinea = numLineaActual;
+                        componente.posicionInicial = puntero - lexema.Length;
                         continuarAnalisis = false;
                         break;
                     case 30:
@@ -520,6 +539,10 @@ namespace Compilador.Analisis_Lexico
                         continuarAnalisis = false;
                         break;
                 }
+            }
+            if (componente != null)
+            {
+                TablaDeSimbolos.obtenerInstancia().adicionarSimbolo(componente);
             }
             return componente;
         }
