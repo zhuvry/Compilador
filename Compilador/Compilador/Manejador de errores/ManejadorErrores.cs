@@ -22,7 +22,7 @@ namespace Compilador.Manejador_de_errores
         {
             if (error != null)
             {
-                if ("lEXICO".Equals(error.tipoError))
+                if ("LEXICO".Equals(error.tipoError))
                 {
                     erroresLexicos.Add(error);
                 }

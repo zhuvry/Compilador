@@ -1,5 +1,7 @@
 ﻿using Compilador.Analisis_Lexico;
 using Compilador.Cache;
+using Compilador.Manejador_de_errores;
+using Compilador.Tabla_de_simbolos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +40,7 @@ namespace Compilador
                 Linea lineaActual = programaFuente.getLinea(i);
                 textBoxPrevisualizacion.AppendText(i + ".");
                 textBoxPrevisualizacion.AppendText(lineaActual.getContenido());
-                if (i != programaFuente.getLineas().Count-1)
+                if (i != programaFuente.getLineas().Count)
                 {
                     textBoxPrevisualizacion.AppendText("\n");
                 }
@@ -97,6 +99,7 @@ namespace Compilador
                 listaLineas.Add(lineaLeida);
             }
             programaFuente.setLineas(listaLineas);
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,9 +147,76 @@ namespace Compilador
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ComponenteLexico comp = analizadorLexico.analizar();
-            MessageBox.Show(comp.lexema);
-            
+            try {
+                ComponenteLexico comp = analizadorLexico.analizar();
+                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
+                List<ComponenteLexico> tabla = TablaDeSimbolos.obtenerInstancia().obtenerTablaSimbolos();
+                List<Error> tablaErrores = ManejadorErrores.obtenerInstancia().ObtenerErroresCompletos();
+                for (int i = 0; i < tabla.Count; i++)
+                {
+                    dataGridView1.Rows.Add(tabla[i].lexema, tabla[i].categoria, tabla[i].numLinea, tabla[i].posicionInicial, tabla[i].posicionFinal);
+                }
+                for (int i = 0; i < tablaErrores.Count; i++)
+                {
+                    dataGridView2.Rows.Add(tablaErrores[i].valorRecibido, tablaErrores[i].descripcionError, tablaErrores[i].valorEsperado, tablaErrores[i].tipoError, tablaErrores[i].numLinea, tablaErrores[i].posicionInicial, tablaErrores[i].posicionFinal);
+                }
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("compile porfavor");
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBoxConsole_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try {
+                ComponenteLexico comp = analizadorLexico.analizar();
+                while (!comp.categoria.Equals("FIN ARCHIVO"))
+                {
+                    comp = analizadorLexico.analizar();
+                }
+                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
+                List<ComponenteLexico> tabla = TablaDeSimbolos.obtenerInstancia().obtenerTablaSimbolos();
+                List<Error> tablaErrores = ManejadorErrores.obtenerInstancia().ObtenerErroresCompletos();
+                for (int i = 0; i < tabla.Count; i++)
+                {
+                    dataGridView1.Rows.Add(tabla[i].lexema, tabla[i].categoria, tabla[i].numLinea, tabla[i].posicionInicial, tabla[i].posicionFinal);
+                }
+                if (tablaErrores.Count == 0)
+                {
+                    System.Windows.Forms.MessageBox.Show("el programa esta bien escrito");
+
+                }
+                else {
+                    System.Windows.Forms.MessageBox.Show("el programa esta mal escrito");
+                    for (int i = 0; i < tablaErrores.Count; i++)
+                    {
+                        dataGridView2.Rows.Add(tablaErrores[i].valorRecibido, tablaErrores[i].descripcionError, tablaErrores[i].valorEsperado, tablaErrores[i].tipoError, tablaErrores[i].numLinea, tablaErrores[i].posicionInicial, tablaErrores[i].posicionFinal);
+                    }
+                }
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("compile porfavor");
+            }
+
         }
     }
 }
