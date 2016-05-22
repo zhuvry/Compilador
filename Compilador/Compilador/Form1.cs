@@ -12,12 +12,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Compilador
 {
     public partial class Form1 : Form
     {
         private ProgramaFuente programaFuente = ProgramaFuente.obtenerInstancia();
         private AnalizadorLexico analizadorLexico = new AnalizadorLexico();
+        private AnalizadorSintactico analizadorsintatico = new AnalizadorSintactico();
         public Form1()
         {
             InitializeComponent();
@@ -218,5 +220,17 @@ namespace Compilador
             }
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            analizadorsintatico.analizar();
+        }
+
+    
     }
 }

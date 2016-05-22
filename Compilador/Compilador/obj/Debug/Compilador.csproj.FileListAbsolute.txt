@@ -61,3 +61,12 @@ C:\Users\rocka\Downloads\Compilador - clase\Compilador\Compilador\obj\Debug\Comp
 C:\Users\rocka\Downloads\Compilador - clase\Compilador\Compilador\obj\Debug\Compilador.Form1.resources
 C:\Users\rocka\Downloads\Compilador - clase\Compilador\Compilador\obj\Debug\Compilador.Properties.Resources.resources
 C:\Users\rocka\Downloads\Compilador - clase\Compilador\Compilador\obj\Debug\Compilador.csproj.GenerateResource.Cache
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\bin\Debug\Compilador.exe.config
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\obj\Debug\Compilador.exe
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\obj\Debug\Compilador.pdb
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\bin\Debug\Compilador.exe
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\bin\Debug\Compilador.pdb
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\obj\Debug\Compilador.csprojResolveAssemblyReference.cache
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\obj\Debug\Compilador.Form1.resources
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\obj\Debug\Compilador.Properties.Resources.resources
+C:\Users\rocka\Documents\GitHub\Compilador\Compilador\Compilador\obj\Debug\Compilador.csproj.GenerateResource.Cache

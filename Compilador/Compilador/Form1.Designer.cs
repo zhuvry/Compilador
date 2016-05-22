@@ -45,13 +45,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +62,7 @@
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -72,7 +73,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(571, 436);
+            this.button1.Location = new System.Drawing.Point(571, 425);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 52);
             this.button1.TabIndex = 0;
@@ -234,40 +235,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.textBoxPrevisualizacion);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.textBoxConsole);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(758, 562);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "proceso de compilacion";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(1, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(766, 595);
-            this.tabControl1.TabIndex = 14;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Lexema";
@@ -292,6 +259,51 @@
             // 
             this.Column5.HeaderText = "PosFinal";
             this.Column5.Name = "Column5";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.textBoxPrevisualizacion);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.textBoxConsole);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(758, 562);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "proceso de compilacion";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(571, 326);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(146, 74);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Ejecutar hasta EOF";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(1, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(766, 595);
+            this.tabControl1.TabIndex = 14;
             // 
             // tabPage3
             // 
@@ -355,15 +367,15 @@
             this.Column11.HeaderText = "Posicion Final";
             this.Column11.Name = "Column11";
             // 
-            // button5
+            // button6
             // 
-            this.button5.Location = new System.Drawing.Point(571, 326);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(146, 74);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Ejecutar hasta EOF";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button6.Location = new System.Drawing.Point(571, 494);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(146, 56);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "anlisis sintactico";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // Form1
             // 
@@ -422,6 +434,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 

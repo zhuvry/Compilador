@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analisis Lexico\AnalizadorLexico.cs" />
+    <Compile Include="Analisis Lexico\AnalizadorSintactico.cs" />
     <Compile Include="Analisis Lexico\ComponenteLexico.cs" />
     <Compile Include="Cache\Linea.cs" />
     <Compile Include="Cache\ProgramaFuente.cs" />
