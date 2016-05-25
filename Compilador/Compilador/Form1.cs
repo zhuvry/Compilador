@@ -225,10 +225,20 @@ namespace Compilador
         {
 
         }
+        private void llenarTablaErrores()
+        {
+            List<Error> tablaErrores = ManejadorErrores.obtenerInstancia().ObtenerErroresCompletos();
 
+            for (int i = 0; i < tablaErrores.Count; i++)
+            {
+                dataGridView2.Rows.Add(tablaErrores[i].valorRecibido, tablaErrores[i].descripcionError, tablaErrores[i].valorEsperado, tablaErrores[i].tipoError, tablaErrores[i].numLinea, tablaErrores[i].posicionInicial, tablaErrores[i].posicionFinal);
+            }
+        }
         private void button6_Click_1(object sender, EventArgs e)
         {
-            analizadorsintatico.analizar();
+            AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
+            analizadorSintactico.Analizar();
+            llenarTablaErrores();
         }
 
     
