@@ -350,8 +350,8 @@ namespace Compilador.Analisis_Lexico
                         string numeroDEcimalDummie = "999.99";
                         devolverPuntero();
                         componente = new ComponenteLexico();
-                        componente.lexema = lexema;
-                        componente.categoria = numeroDEcimalDummie;
+                        componente.lexema = numeroDEcimalDummie;
+                        componente.categoria = "NUMERO DECIMAL";
                         componente.numLinea = numLineaActual;
                         componente.posicionInicial = puntero - lexema.Length;
                         componente.posicionFinal = puntero - 1;

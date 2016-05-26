@@ -92,12 +92,29 @@ namespace Compilador.Analisis_Lexico
                 double operandoIzquierdo = pilaCalculos.Pop();
                 pilaCalculos.Push(operandoIzquierdo * operandoDerecho);
             }
-            else if ("DIVISION".Equals(preAnalisis.categoria)){
+            else if ("DIVISION".Equals(preAnalisis.categoria))
+            {
                 Avanzar(preAnalisis.categoria);
                 B();
                 double operandoDerecho = pilaCalculos.Pop();
                 double operandoIzquierdo = pilaCalculos.Pop();
-                pilaCalculos.Push(operandoIzquierdo / operandoDerecho);
+                if (operandoDerecho.Equals(0))
+                {
+                    Error error = new Error();
+                    error.valorRecibido = "0";
+                    error.posicionInicial = preAnalisis.posicionInicial;
+                    error.posicionFinal = preAnalisis.posicionFinal;
+                    error.numLinea = preAnalisis.numLinea;
+                    error.valorEsperado = "CUALQUIER OTRO NUMERO";
+                    error.descripcionError = "DIVISION POR CERO";
+                    error.tipoError = "SEMANTICO";
+                    ManejadorErrores.obtenerInstancia().adicionarError(error);
+                    throw new Exception("ERROR FATAL, SEMANTICO");
+                }
+                else
+                {
+                    pilaCalculos.Push(operandoIzquierdo / operandoDerecho);
+                }
             }
         }
 
